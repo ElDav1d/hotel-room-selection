@@ -1,0 +1,58 @@
+@import "../../assets/stylesheets/foundation/helpers.scss";
+@import "../../assets/stylesheets/components/material-card.scss";
+@import "../../assets/stylesheets/components/button.scss";
+
+.ReservationSummary {
+  @extend %is-material-card;
+  margin: 0 $spacing-S $spacing-XL;
+  padding: $spacing-xXS 0;
+
+  p {
+    font-size: $font-size-S;
+  }
+
+  &_Header {
+    @extend %is-heading;
+    padding: $spacing-xXS $spacing-xXS;
+  }
+
+  &_Main {
+    margin: $spacing-xXS $spacing-xXS;
+    padding: $spacing-xXS 0;
+    border-bottom: solid 1px $grey;
+
+    &Heading {
+      @extend %is-sub-heading;
+    }
+
+    &InfoBlock {
+      margin-bottom: $spacing-xxXS;
+
+      span {
+        margin-right: $spacing-xXS;
+      }
+
+      p {
+        margin-bottom: $spacing-xxxXS;
+      }
+    }
+  }
+
+  &_Footer {
+    padding: $spacing-xXS $spacing-xXS;
+
+    &Pricing {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: $spacing-S;
+    }
+
+    &CTA {
+      @extend %is-button;
+    }
+  }
+
+  p {
+    font-size: $font-size-S;
+  }
+}
