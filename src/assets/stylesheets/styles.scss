@@ -1,4 +1,5 @@
 @import "foundation/config";
+
 body {
   margin: 0;
   font-family: $font-family-primary;
@@ -8,6 +9,19 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+input {
+  border: none;
+  box-shadow: none;
+
+  &[type="date"] {
+    background-color: $white;
+  }
+
+  &::-webkit-inner-spin-button {
+    opacity: 1;
+  }
 }
 
 a {

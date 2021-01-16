@@ -1,12 +1,7 @@
 <template>
   <div>
-    <h1>LAYOUT</h1>
-    <header>
-      <h2>HEADER</h2>
-      <div>
-        Form
-      </div>
-    </header>
+    <reservation-form />
+
     <main>
       <h2>MAIN</h2>
       <section>
@@ -33,13 +28,12 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
+import ReservationForm from "../components/ReservationForm/ReservationForm.vue";
 
 export default {
   name: "Home",
   components: {
-    // HelloWorld,
+    ReservationForm,
   },
 };
 </script>

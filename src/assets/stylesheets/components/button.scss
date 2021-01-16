@@ -1,0 +1,10 @@
+@import "../foundation/config.scss";
+@import "../foundation/helpers.scss";
+
+%is-button {
+  width: 100%;
+  font-weight: $font-weight-bold;
+  color: $white;
+  background-color: $blue;
+  padding: $spacing-xXS $spacing-xxXS;
+}

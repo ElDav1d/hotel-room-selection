@@ -1,0 +1,34 @@
+@import "../../assets/stylesheets/foundation/config.scss";
+@import "../../assets/stylesheets/foundation/helpers.scss";
+@import "../../assets/stylesheets/components/button.scss";
+
+.ReservationForm {
+  background-image: url("../../assets/images/los-cocos-room-header-2-x.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: $spacing-S 0;
+
+  &_Overlay {
+    background-color: rgba($blue, 0.25);
+  }
+
+  &_Container {
+    @extend %is-contained;
+    padding: $spacing-XS 0;
+  }
+
+  &_Input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: $spacing-xXS $spacing-xxXS;
+
+    &:not(:last-child) {
+      margin-bottom: $spacing-xXS;
+    }
+  }
+
+  &_Submit {
+    @extend %is-button;
+  }
+}
