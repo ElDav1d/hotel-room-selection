@@ -4,6 +4,7 @@
     <main>
       <article>
         <progress-bar :title="title" />
+        <rooms-list />
       </article>
       <aside>
         Summary
@@ -22,12 +23,14 @@
 <script>
 import ReservationForm from "../components/ReservationForm/ReservationForm.vue";
 import ProgressBar from "../components/ProgressBar/ProgressBar.vue";
+import RoomsList from "../components/RoomsList/RoomsList.vue";
 
 export default {
   name: "Home",
   components: {
     ReservationForm,
     ProgressBar,
+    RoomsList,
   },
   data() {
     return {

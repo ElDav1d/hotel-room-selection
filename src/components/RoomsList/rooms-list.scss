@@ -1,0 +1,8 @@
+@import "../../assets/stylesheets/foundation/config.scss";
+@import "../../assets/stylesheets/foundation/helpers.scss";
+
+.RoomsList {
+  @extend %is-clean-list;
+  padding: 0 $spacing-S;
+  margin-bottom: 1rem;
+}

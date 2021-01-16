@@ -21,6 +21,7 @@ export default {
     title: {
       type: String,
       default: "This is your progress",
+      required: true,
     },
   },
 };

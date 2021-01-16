@@ -40,3 +40,8 @@
   font-size: $font-size-M;
   margin-bottom: $spacing-xxXS;
 }
+
+%is-sub-heading {
+  font-size: $font-size-default;
+  margin-bottom: $spacing-xxXS;
+}

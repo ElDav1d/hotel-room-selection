@@ -1,0 +1,5 @@
+%is-material-card {
+  box-shadow: 0 2px 1px 1px rgba($black, 0.25);
+  border: solid 1px rgba($black, 0.125);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
