@@ -1,0 +1,31 @@
+// ---------------------------
+// Mixins
+// ---------------------------
+
+// ----- Media Queries ----- //
+
+@mixin mq($point) {
+  @if $point == S {
+    @media (min-width: 568px) {
+      @content;
+    }
+  } @else if $point == M {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == L {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// ---------------------------
+// Placeholders
+// ---------------------------
+
+%is-clean-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

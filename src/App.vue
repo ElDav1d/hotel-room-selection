@@ -1,38 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/">Rooms</router-link>
-      <router-link to="/">Restaurant</router-link>
-      <router-link to="/">LOGO</router-link>
-      <router-link to="/">Weedings</router-link>
-      <router-link to="/">Membership</router-link>
-      <router-link to="/">Contact</router-link>
-    </div>
+    <main-navigation />
     <router-view />
   </div>
 </template>
 
+<script>
+import MainNavigation from "./components/shared/MainNavigation/MainNavigation.vue";
+
+export default {
+  name: "app",
+  components: {
+    MainNavigation,
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import "./assets/stylesheets/styles.scss";
 </style>

@@ -1,0 +1,31 @@
+@import "../../../assets/stylesheets/foundation/config.scss";
+@import "../../../assets/stylesheets/foundation/helpers.scss";
+
+.MainNavigation {
+  font-size: $font-size-S;
+
+  &_List {
+    @extend %is-clean-list;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: $spacing-xXS;
+
+    &Item {
+      flex-grow: 0;
+      padding: $spacing-xxXS $spacing-XS;
+
+      &-logo {
+        text-align: center;
+        padding: $spacing-xXS;
+        flex-grow: 1;
+        order: -1;
+        width: 100%;
+
+        img {
+          width: 6rem;
+        }
+      }
+    }
+  }
+}
