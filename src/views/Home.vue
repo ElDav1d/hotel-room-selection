@@ -1,18 +1,10 @@
 <template>
   <div>
     <reservation-form />
-
     <main>
-      <h2>MAIN</h2>
-      <section>
-        <div>Prog bar</div>
-        <ul>
-          Items List
-          <li>Item1</li>
-          <li>Item2</li>
-          <li>Item3</li>
-        </ul>
-      </section>
+      <article>
+        <progress-bar :title="title" />
+      </article>
       <aside>
         Summary
       </aside>
@@ -29,11 +21,18 @@
 
 <script>
 import ReservationForm from "../components/ReservationForm/ReservationForm.vue";
+import ProgressBar from "../components/ProgressBar/ProgressBar.vue";
 
 export default {
   name: "Home",
   components: {
     ReservationForm,
+    ProgressBar,
+  },
+  data() {
+    return {
+      title: "Rooms & Rates",
+    };
   },
 };
 </script>

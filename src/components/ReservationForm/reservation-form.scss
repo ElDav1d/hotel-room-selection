@@ -8,14 +8,15 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: $spacing-S 0;
+  margin-bottom: $spacing-S;
 
   &_Overlay {
     background-color: rgba($blue, 0.25);
   }
 
   &_Container {
-    @extend %is-contained;
     padding: $spacing-XS 0;
+    margin: 0 1rem;
   }
 
   &_Input {

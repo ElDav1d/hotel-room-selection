@@ -1,0 +1,15 @@
+@import "../../assets/stylesheets/foundation/helpers.scss";
+
+.ProgressBar {
+  margin-bottom: $spacing-S;
+  padding: 0 $spacing-S;
+
+  &_Title {
+    @extend %is-heading;
+  }
+
+  &_Mock {
+    width: 100%;
+    margin: $spacing-S 0;
+  }
+}

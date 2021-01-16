@@ -1,3 +1,5 @@
+@import "../foundation/config.scss";
+
 // ---------------------------
 // Mixins
 // ---------------------------
@@ -21,7 +23,7 @@
 }
 
 // ---------------------------
-// Placeholders
+// Misc Placeholders
 // ---------------------------
 
 %is-clean-list {
@@ -30,6 +32,11 @@
   margin: 0;
 }
 
-%is-contained {
-  margin: 0 1rem;
+// ---------------------------
+// Misc Typography
+// ---------------------------
+
+%is-heading {
+  font-size: $font-size-M;
+  margin-bottom: $spacing-xxXS;
 }
