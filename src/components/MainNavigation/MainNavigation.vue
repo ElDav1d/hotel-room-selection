@@ -13,7 +13,7 @@
       <li class="MainNavigation_ListItem-logo">
         <router-link to="/">
           <img
-            src="../../../assets/images/los-cocos-logo-header.jpg"
+            src="../../assets/images/los-cocos-logo-header.jpg"
             alt="Los Cocos Bungalows"
           />
         </router-link>
