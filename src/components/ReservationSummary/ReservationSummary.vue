@@ -12,11 +12,11 @@
             <p>
               <strong>Check in</strong>
             </p>
-            <p>From</p>
+            <p>From 15:00h</p>
           </span>
           <span>
             <p><strong>Check out</strong></p>
-            <p>Before</p>
+            <p>Before 12:00h</p>
           </span>
           <span></span>
         </div>

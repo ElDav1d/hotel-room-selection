@@ -50,6 +50,7 @@
           @click="submitReservationHandler"
         />
       </form>
+      <pre>{{ $data }}</pre>
     </section>
   </header>
 </template>

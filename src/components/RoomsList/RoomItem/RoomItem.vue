@@ -1,5 +1,8 @@
 <template>
-  <li class="RoomItem">
+  <li
+    :class="isSelected ? 'RoomItem-selected' : 'RoomItem'"
+    @click="selectItemHandler"
+  >
     <img class="RoomItem_Pic" :src="room.pic" :alt="room.name" />
     <div class="RoomItem_Data">
       <div class="RoomItem_DataHeader">
@@ -25,6 +28,13 @@
 <script>
 export default {
   name: "room-item",
+  data() {
+    return {
+      name: this.$props.room.name,
+      pricing: this.$props.room.pricing,
+      isSelected: this.$props.room.isSelected,
+    };
+  },
   props: {
     room: {
       type: Object,
@@ -32,6 +42,28 @@ export default {
         return { message: "Not available" };
       },
       required: true,
+    },
+  },
+  methods: {
+    getRoomData() {
+      return {
+        isSelected: this.$props.room.isSelected,
+        name: this.$props.room.name,
+        pricing: this.$props.room.pricing,
+      };
+    },
+
+    saveRoomData(room) {
+      this.$store.commit("saveRoomData", room);
+    },
+
+    selectItemHandler() {
+      if (this.isSelected) {
+        return;
+      }
+      this.$emit("itemSelected", this.$props.room.id);
+      const room = this.getRoomData();
+      this.saveRoomData(room);
     },
   },
 };
