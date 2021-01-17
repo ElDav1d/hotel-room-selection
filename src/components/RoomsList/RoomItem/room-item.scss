@@ -4,8 +4,12 @@
 .RoomItem {
   @extend %is-material-card;
 
+  @include mq(M) {
+    display: flex;
+  }
+
   p {
-    font-size: $font-size-S;
+    @extend %is-responsive-paragraph;
   }
 
   &:hover {
@@ -17,6 +21,22 @@
 
   &_Pic {
     width: 100%;
+
+    @include mq(M) {
+      width: 50%;
+      object-fit: contain;
+      margin-left: -$spacing-S;
+    }
+
+    @include mq(L) {
+      width: 45%;
+      margin-left: -$spacing-M;
+    }
+
+    @include mq(XL) {
+      width: 37.5%;
+      margin-left: -$spacing-M;
+    }
   }
 
   &_Data {
@@ -25,6 +45,20 @@
     justify-content: space-between;
     min-height: 12rem;
     padding: $spacing-S $spacing-xXS;
+
+    @include mq(M) {
+      min-height: 10rem;
+    }
+
+    @include mq(L) {
+      padding: $spacing-S $spacing-XS;
+      min-height: 13rem;
+    }
+
+    @include mq(XL) {
+      padding: $spacing-M $spacing-S;
+      min-height: 13rem;
+    }
 
     &Header {
       h3 {

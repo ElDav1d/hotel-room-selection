@@ -3,37 +3,88 @@
 @import "../../assets/stylesheets/components/button.scss";
 
 .ReservationSummary {
-  @extend %is-material-card;
-  margin: 0 $spacing-S $spacing-XL;
-  padding: $spacing-xXS 0;
+  section {
+    @extend %is-material-card;
+    margin: 0 $spacing-S $spacing-XL;
+    padding: $spacing-xXS 0;
+  }
 
   p {
-    font-size: $font-size-S;
+    @extend %is-responsive-paragraph;
+  }
+
+  img {
+    width: $aside-width-M;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include mq(L) {
+      width: $aside-width-L;
+    }
+
+    @include mq(XL) {
+      width: 300px;
+    }
+  }
+
+  &_Pic {
+    display: none;
+
+    @include mq(M) {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      height: $fake-header-M;
+    }
+
+    @include mq(L) {
+      height: $fake-header-L;
+    }
+
+    @include mq(XL) {
+      height: $fake-header-XL;
+    }
   }
 
   &_Header {
     @extend %is-heading;
     padding: $spacing-xXS $spacing-xXS;
+
+    @include mq(L) {
+      padding: $spacing-XS $spacing-XS;
+    }
   }
 
   &_Main {
-    margin: $spacing-xXS $spacing-xXS;
-    padding: $spacing-xXS 0;
+    padding: $spacing-xXS;
     border-bottom: solid 1px $grey;
+
+    @include mq(L) {
+      padding: $spacing-XS;
+    }
 
     &Heading {
       @extend %is-sub-heading;
     }
+  }
 
-    &InfoBlock {
-      margin-bottom: $spacing-xxXS;
+  &_MainInfoBlock {
+    margin-bottom: $spacing-xxXS;
 
+    span {
+      margin-right: $spacing-xXS;
+    }
+
+    p {
+      margin-bottom: $spacing-xxxXS;
+    }
+
+    &-check-info {
+      @extend .ReservationSummary_MainInfoBlock;
+      display: flex;
       span {
-        margin-right: $spacing-xXS;
-      }
-
-      p {
-        margin-bottom: $spacing-xxxXS;
+        flex-grow: 1;
       }
     }
   }
@@ -50,9 +101,5 @@
     &CTA {
       @extend %is-button;
     }
-  }
-
-  p {
-    font-size: $font-size-S;
   }
 }

@@ -7,16 +7,16 @@
 // ----- Media Queries ----- //
 
 @mixin mq($point) {
-  @if $point == S {
-    @media (min-width: 568px) {
-      @content;
-    }
-  } @else if $point == M {
+  @if $point == M {
     @media (min-width: 768px) {
       @content;
     }
   } @else if $point == L {
     @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $point == XL {
+    @media (min-width: 1440px) {
       @content;
     }
   }
@@ -39,9 +39,31 @@
 %is-heading {
   font-size: $font-size-M;
   margin-bottom: $spacing-xxXS;
+
+  @include mq(L) {
+    font-size: $font-size-L;
+    margin-bottom: $spacing-XS;
+  }
 }
 
 %is-sub-heading {
   font-size: $font-size-default;
   margin-bottom: $spacing-xxXS;
+
+  @include mq(L) {
+    font-size: $font-size-M;
+    margin-bottom: $spacing-xXS;
+  }
+
+  @include mq(XL) {
+    margin-bottom: $spacing-XS;
+  }
+}
+
+%is-responsive-paragraph {
+  font-size: $font-size-S;
+
+  @include mq(L) {
+    font-size: $font-size-default;
+  }
 }

@@ -1,8 +1,27 @@
 @import "../../assets/stylesheets/foundation/helpers.scss";
 
 .ProgressBar {
-  margin-bottom: $spacing-S;
+  box-sizing: border-box;
+  margin-bottom: $spacing-M;
   padding: 0 $spacing-S;
+
+  @include mq(M) {
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    width: $main-content-width-M;
+    height: $fake-header-M;
+  }
+
+  @include mq(L) {
+    width: 40vw;
+    height: $fake-header-L;
+  }
+
+  @include mq(XL) {
+    width: 35vw;
+    height: $fake-header-XL;
+  }
 
   &_Title {
     @extend %is-heading;
@@ -11,5 +30,12 @@
   &_Mock {
     width: 100%;
     margin: $spacing-S 0;
+
+    @include mq(L) {
+      max-width: 27vw;
+    }
+    @include mq(XL) {
+      max-width: 20vw;
+    }
   }
 }

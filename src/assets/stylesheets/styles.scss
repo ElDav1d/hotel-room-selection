@@ -1,8 +1,44 @@
-@import "foundation/config";
+@import "foundation/helpers";
 
 body {
   margin: 0;
   font-family: $font-family-primary;
+}
+
+main {
+  @include mq(M) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+article {
+  @include mq(M) {
+    width: $main-content-width-M;
+  }
+
+  @include mq(L) {
+    width: $main-content-width-L;
+  }
+  
+  @include mq(XL) {
+    
+    width: $main-content-width-XL;
+  }
+}
+
+aside {
+  @include mq(M) {
+    width: $aside-width-M;
+  }
+
+  @include mq(L) {
+    width: $aside-width-L;
+  }
+
+  @include mq(XL) {
+    width: $aside-width-XL;
+  }
 }
 
 #app {

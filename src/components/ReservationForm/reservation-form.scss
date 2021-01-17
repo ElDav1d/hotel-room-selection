@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: $spacing-S 0;
-  margin-bottom: $spacing-S;
+  margin-bottom: $spacing-L;
 
   &_Overlay {
     background-color: rgba($blue, 0.25);
@@ -16,6 +16,17 @@
   &_Container {
     padding: $spacing-XS 0;
     margin: 0 1rem;
+
+    @include mq(M) {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: $main-content-width-M;
+    }
+
+    @include mq(L) {
+      display: flex;
+      max-width: $main-content-width-L;
+    }
   }
 
   &_Input {
@@ -25,6 +36,13 @@
 
     &:not(:last-child) {
       margin-bottom: $spacing-xXS;
+    }
+
+    @include mq(L) {
+      &:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: $spacing-xXS;
+      }
     }
   }
 

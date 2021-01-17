@@ -2,29 +2,54 @@
 @import "../../assets/stylesheets/foundation/helpers.scss";
 
 .MainNavigation {
-  font-size: $font-size-S;
+  a {
+    display: block;
+  }
 
   &_List {
     @extend %is-clean-list;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: $spacing-xXS;
+    justify-content: center;
+    margin-bottom: $spacing-xxXS;
 
-    &Item {
-      flex-grow: 0;
+    @include mq(L) {
+      justify-content: space-between;
+      width: 75vw;
+      margin: auto;
+    }
+
+    @include mq(XL) {
+      width: 60vw;
+      max-width: 1000px;
+    }
+  }
+
+  &_ListItem {
+    @extend %is-responsive-paragraph;
+    padding: $spacing-xxXS $spacing-XS;
+
+    @include mq(L) {
+      padding: $spacing-XS;
+      order: 0;
+      width: auto;
+    }
+
+    &-logo {
+      text-align: center;
       padding: $spacing-xxXS $spacing-XS;
+      order: -1;
+      width: 100%;
 
-      &-logo {
-        text-align: center;
-        padding: $spacing-xXS;
-        flex-grow: 1;
-        order: -1;
-        width: 100%;
+      @include mq(L) {
+        padding: $spacing-XS;
+        order: 0;
+        width: auto;
+      }
 
-        img {
-          width: 6rem;
-        }
+      img {
+        width: 6rem;
       }
     }
   }

@@ -4,5 +4,5 @@
 .RoomsList {
   @extend %is-clean-list;
   padding: 0 $spacing-S;
-  margin-bottom: 1rem;
+  margin-bottom: $spacing-L;
 }
