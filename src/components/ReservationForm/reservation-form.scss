@@ -1,5 +1,6 @@
 @import "../../assets/stylesheets/foundation/helpers.scss";
 @import "../../assets/stylesheets/components/button.scss";
+@import "../../assets/stylesheets/components/input.scss";
 
 .ReservationForm {
   background-image: url("../../assets/images/los-cocos-room-header-2-x.png");
@@ -30,19 +31,11 @@
   }
 
   &_Input {
-    box-sizing: border-box;
-    width: 100%;
-    padding: $spacing-xXS $spacing-xxXS;
+    @extend %is-input-base;
 
-    &:not(:last-child) {
-      margin-bottom: $spacing-xXS;
-    }
-
-    @include mq(L) {
-      &:not(:last-child) {
-        margin-bottom: 0;
-        margin-right: $spacing-xXS;
-      }
+    &Wrapper {
+      @extend %is-input-base;
+      @extend %is-labeled-input-wrapper;
     }
   }
 

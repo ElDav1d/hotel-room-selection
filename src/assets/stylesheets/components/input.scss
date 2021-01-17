@@ -1,0 +1,34 @@
+@import "../foundation/config.scss";
+
+%is-input-base {
+  font-family: $font-family-primary;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2.5rem;
+  padding: $spacing-xXS $spacing-xxXS;
+
+  &:not(:last-child) {
+    margin-bottom: $spacing-xXS;
+  }
+
+  @include mq(L) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+      margin-right: $spacing-xXS;
+    }
+  }
+}
+
+%is-labeled-input-wrapper {
+  position: relative;
+  display: flex;
+  padding: 0;
+
+  label {
+    width: 6rem;
+    background-color: $white;
+    font-size: $font-size-S;
+    position: absolute;
+    padding: $spacing-xXS $spacing-xxXS;
+  }
+}
