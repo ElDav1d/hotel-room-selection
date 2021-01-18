@@ -80,7 +80,7 @@
       margin-bottom: $spacing-xxxXS;
     }
 
-    &-check-info {
+    &-split {
       @extend .ReservationSummary_MainInfoBlock;
       display: flex;
       span {

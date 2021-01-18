@@ -71,6 +71,12 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    getSelectedRoom: state => {
+      return state.selectedRoom;
+    },
+    getReservationDetails: state => {
+      return state.reservationDetails;
+    },
     getStoredRooms: state => {
       return state.storedRooms;
     },
