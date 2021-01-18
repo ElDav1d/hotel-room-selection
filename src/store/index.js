@@ -53,10 +53,8 @@ export default new Vuex.Store({
       },
     ],
     reservationDetails: {
-      name: "Mini Dreamy Room",
       checkIn: "2021-01-17",
       checkOut: "2021-01-18",
-      pricing: 200,
       adults: 1,
       children: 0,
       days: 1,
@@ -68,7 +66,10 @@ export default new Vuex.Store({
     },
     saveRooms: (state, rooms) => {
       state.storedRooms = rooms;
-    }
+    },
+    saveReservationData: (state, reservationData) => {
+      state.reservationDetails = reservationData;
+    },
   },
   getters: {
     getSelectedRoom: state => {

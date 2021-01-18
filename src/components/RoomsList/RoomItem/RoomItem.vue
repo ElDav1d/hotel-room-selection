@@ -62,8 +62,7 @@ export default {
         return;
       }
       this.$emit("itemSelected", this.$props.room.id);
-      const room = this.getRoomData();
-      this.saveRoomData(room);
+      this.saveRoomData(this.getRoomData());
     },
   },
 };

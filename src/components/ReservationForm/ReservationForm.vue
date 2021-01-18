@@ -138,11 +138,26 @@ export default {
       }
     },
 
+    getReservationData() {
+      return {
+        checkIn: this.checkIn,
+        checkOut: this.checkOut,
+        adults: this.adultsAmount,
+        children: this.childrenAmount,
+        days: this.daysAmount,
+      };
+    },
+
+    saveReservationData(data) {
+      this.$store.commit("saveReservationData", data);
+    },
+
     submitReservationHandler(event) {
       event.preventDefault();
       const checkInDate = new Date(this.checkIn);
       const checkOutDate = new Date(this.checkOut);
       this.daysAmount = this.calcDays(checkInDate, checkOutDate);
+      this.saveReservationData(this.getReservationData());
     },
   },
 

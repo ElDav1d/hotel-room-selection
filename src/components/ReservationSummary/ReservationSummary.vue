@@ -38,7 +38,7 @@
       <div class="ReservationSummary_Footer">
         <h3 class="ReservationSummary_FooterPricing">
           <span>Total</span>
-          <span>{{ selectedRoom.pricing }}€</span>
+          <span>{{ setTotalPricing }}€</span>
         </h3>
         <button class="ReservationSummary_FooterCTA">Save</button>
       </div>
@@ -55,6 +55,10 @@ export default {
     },
     reservationDetails() {
       return this.$store.getters.getReservationDetails;
+    },
+    setTotalPricing() {
+      console.log(this.reservationDetails.days);
+      return this.selectedRoom.pricing * this.reservationDetails.days;
     },
   },
 };
