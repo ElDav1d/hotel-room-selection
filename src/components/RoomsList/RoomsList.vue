@@ -18,11 +18,7 @@ export default {
   methods: {
     resetSelected(id) {
       const newRooms = this.storedRooms.map(room => {
-        if (room.id === id) {
-          room.isSelected = true;
-        } else {
-          room.isSelected = false;
-        }
+        room.isSelected = room.id === id;
         ++room.key;
         return room;
       });

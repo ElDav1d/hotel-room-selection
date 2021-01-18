@@ -58,7 +58,8 @@ export default new Vuex.Store({
       adults: 1,
       children: 0,
       days: 1,
-    }
+    },
+    promo: 1,
   },
   mutations: {
     saveRoomData: (state, room) => {
@@ -70,6 +71,9 @@ export default new Vuex.Store({
     saveReservationData: (state, reservationData) => {
       state.reservationDetails = reservationData;
     },
+    savePromo: (state, promo) => {
+      state.promo = promo;
+    }
   },
   getters: {
     getSelectedRoom: state => {
@@ -80,6 +84,9 @@ export default new Vuex.Store({
     },
     getStoredRooms: state => {
       return state.storedRooms;
+    },
+    getPromo: state => {
+      return state.promo;
     },
   },
   plugins: [createPersistedState()],

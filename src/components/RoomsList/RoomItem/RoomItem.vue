@@ -19,7 +19,7 @@
             <p>People: {{ room.people }}</p>
           </span>
         </div>
-        <h3>€{{ room.pricing }}</h3>
+        <h3>€{{ roomPricing }}</h3>
       </div>
     </div>
   </li>
@@ -46,10 +46,13 @@ export default {
   },
   methods: {
     getRoomData() {
+      const finalPricing = this.$route.query.promo_code
+        ? this.applyPromo(this.getPromo())
+        : this.$props.room.pricing;
       return {
         isSelected: this.$props.room.isSelected,
         name: this.$props.room.name,
-        pricing: this.$props.room.pricing,
+        pricing: finalPricing,
       };
     },
 
@@ -57,13 +60,36 @@ export default {
       this.$store.commit("saveRoomData", room);
     },
 
-    selectItemHandler() {
-      if (this.isSelected) {
-        return;
-      }
-      this.$emit("itemSelected", this.$props.room.id);
-      this.saveRoomData(this.getRoomData());
+    resetPromo() {
+      this.$store.commit("savePromo", 1);
     },
+
+    selectItemHandler() {
+      if (!this.isSelected) {
+        this.$emit("itemSelected", this.$props.room.id);
+        this.saveRoomData(this.getRoomData());
+      }
+    },
+
+    getPromo() {
+      return this.$store.getters.getPromo;
+    },
+
+    applyPromo(promo) {
+      return (
+        this.$props.room.pricing - (this.$props.room.pricing * promo) / 100
+      );
+    },
+  },
+  computed: {
+    roomPricing() {
+      return this.getRoomData().pricing;
+    },
+  },
+  created() {
+    if (!this.$route.query.promo_code) {
+      this.resetPromo();
+    }
   },
 };
 </script>

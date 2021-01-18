@@ -37,5 +37,19 @@ export default {
       title: "Rooms & Rates",
     };
   },
+  methods: {
+    getPromo() {
+      return this.$route.query.promo_code;
+    },
+
+    savePromo(promo) {
+      this.$store.commit("savePromo", promo);
+    },
+  },
+  created() {
+    if (this.$route.query.promo_code) {
+      this.savePromo(this.$route.query.promo_code);
+    }
+  },
 };
 </script>

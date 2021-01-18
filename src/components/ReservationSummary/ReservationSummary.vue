@@ -57,7 +57,6 @@ export default {
       return this.$store.getters.getReservationDetails;
     },
     setTotalPricing() {
-      console.log(this.reservationDetails.days);
       return this.selectedRoom.pricing * this.reservationDetails.days;
     },
   },
